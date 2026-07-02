@@ -1,0 +1,430 @@
+{
+  "info": {
+    "_postman_id": "fec3796c-d877-4d95-9e81-208c909e3c70",
+    "name": "Crypto service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "30479861"
+  },
+  "item": [
+    {
+      "name": "crypto-java",
+      "item": [
+        {
+          "name": "Sign PKCS#7",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "detached",
+                  "value": "false",
+                  "type": "text",
+                  "uuid": "e7d00112-7be7-41e1-b034-17efd7539c7b"
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "df50e0b7-5089-40b2-8ce8-4e6aa6c9bd04",
+                  "src": "35SFHbIjG/test.txt"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8081/v1/crypto/sign",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "v1",
+                "crypto",
+                "sign"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Verify PKCS#7",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "c892c46e-eb48-4234-b6c9-278c93b22260",
+                  "src": "ofiTElwZX/test.txt"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8081/v1/crypto/verify",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "v1",
+                "crypto",
+                "verify"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete document",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/v1/crypto/files?name=test.txt",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "v1",
+                "crypto",
+                "files"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "test.txt",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Encrypt",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "c892c46e-eb48-4234-b6c9-278c93b22260",
+                  "src": "67MbdaHSl/test.txt"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8081/v1/crypto/encrypt",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "v1",
+                "crypto",
+                "encrypt"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Decrypt",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "c892c46e-eb48-4234-b6c9-278c93b22260",
+                  "src": "SPURkJemN/test.txt.p7m"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8081/v1/crypto/decrypt",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "v1",
+                "crypto",
+                "decrypt"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Hash SHA-256",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "8cab29f5-7b50-4b40-a025-ebc372975b3f",
+                  "src": "1LFkhC-YF/test.txt"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8081/v1/crypto/hash",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "v1",
+                "crypto",
+                "hash"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Audit",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/v1/crypto/operations",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "v1",
+                "crypto",
+                "operations"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "crypto-go",
+      "item": [
+        {
+          "name": "Sign PKCS#7",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "e66af59b-b8a1-4750-abc9-ff21ffa27421",
+                  "src": "pKgeofyWu/test1.txt"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8081/v2/crypto/sign?detached=false",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "v2",
+                "crypto",
+                "sign"
+              ],
+              "query": [
+                {
+                  "key": "detached",
+                  "value": "false",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Verify PKCS#7",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "e66af59b-b8a1-4750-abc9-ff21ffa27421",
+                  "src": "apiFFhnU6/test1.txt"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8081/v2/crypto/verify",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "v2",
+                "crypto",
+                "verify"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Encrypt",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "e66af59b-b8a1-4750-abc9-ff21ffa27421",
+                  "src": "ONNP4Ldwn/test1.txt"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8081/v2/crypto/encrypt",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "v2",
+                "crypto",
+                "encrypt"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Decrypt",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "e66af59b-b8a1-4750-abc9-ff21ffa27421",
+                  "src": "cH5eqUoHm/test1.txt.p7m"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8081/v2/crypto/decrypt",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "v2",
+                "crypto",
+                "decrypt"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Hash SHA-256",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "uuid": "e66af59b-b8a1-4750-abc9-ff21ffa27421",
+                  "src": "oW5-0GQmm/test3.txt"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8081/v2/crypto/hash",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "v2",
+                "crypto",
+                "hash"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Audit",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "http://localhost:8081/v2/crypto/operations",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "v2",
+                "crypto",
+                "operations"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
